@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "React Extension",
+    "description": "Chrome Extension in React",
+    "version": "1.0.0",
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "React Extension",
+        "default_icon": "./react.png"
+    },
+    "icons": {
+        "16": "./react.png",
+        "32": "./react.png",
+        "48": "./react.png",
+        "128": "./react.png"
+    },
+    "options_page": "options.html"
+}
