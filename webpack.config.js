@@ -1,9 +1,13 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/test.tsx',
+    devtool: 'cheap-module-source-map',
+    entry: {
+        popup: path.resolve('src/popup/popup.tsx')
+    },
     module: {
         rules: [
             {
@@ -21,6 +25,11 @@ module.exports = {
                     to: path.resolve('dist')
                 }
             ]
+        }),
+        new HtmlPlugin({
+            title: 'React Extension',
+            filename: 'popup.html',
+            chunks: ['popup']
         })
 
     ],
@@ -28,7 +37,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     output: {
-        filename: 'index.js',
+        filename: '[name].js', //dynamic multiple chunks
         path: path.resolve(__dirname, 'dist')
     }
 }

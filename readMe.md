@@ -10,3 +10,4 @@
  8. define webpack config
  9. npm i webpack, webpack-cli
  10. npm i copy-webpack-plugin to copy static files into dist
+ 11. npm i html-webpack-plugin
