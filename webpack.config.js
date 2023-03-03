@@ -38,6 +38,11 @@ module.exports = {
     output: {
         filename: '[name].js', //dynamic multiple chunks
         path: path.resolve(__dirname, 'dist')
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
     }
 }
 
